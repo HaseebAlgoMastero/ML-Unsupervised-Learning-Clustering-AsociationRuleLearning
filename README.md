@@ -65,55 +65,55 @@ The F-P growth algorithm stands for Frequent Pattern, and it is the improved ver
 <li>Protein Sequence: The association rules help in determining the synthesis of artificial Proteins.</li>
 <li>It is also used for the Catalog Design and Loss-leader Analysis and many more other applications.</li>
 </ul>
-Apriori Algorithm in Machine Learning
+<h2>Apriori Algorithm in Machine Learning</h2>
 The Apriori algorithm uses frequent itemsets to generate association rules, and it is designed to work on the databases that contain transactions. With the help of these association rule, it determines how strongly or how weakly two objects are connected. This algorithm uses a breadth-first search and Hash Tree to calculate the itemset associations efficiently. It is the iterative process for finding the frequent itemsets from the large dataset.
 
 This algorithm was given by the R. Agrawal and Srikant in the year 1994. It is mainly used for market basket analysis and helps to find those products that can be bought together. It can also be used in the healthcare field to find drug reactions for patients.
 
-What is Frequent Itemset?
+<h2>What is Frequent Itemset?</h2>
 
 Frequent itemsets are those items whose support is greater than the threshold value or user-specified minimum support. It means if A & B are the frequent itemsets together, then individually A and B should also be the frequent itemset.
 
 Suppose there are the two transactions: A= {1,2,3,4,5}, and B= {2,3,7}, in these two transactions, 2 and 3 are the frequent itemsets.
 
-Note: To better understand the apriori algorithm, and related term such as support and confidence, it is recommended to understand the association rule learning.
+<h2>Note:</h2> To better understand the apriori algorithm, and related term such as support and confidence, it is recommended to understand the association rule learning.
 Steps for Apriori Algorithm
 Below are the steps for the apriori algorithm:
 
-Step-1: Determine the support of itemsets in the transactional database, and select the minimum support and confidence.
+<p>Below are the steps for the apriori algorithm:</p>
+<p><strong>Step-1:</strong> Determine the support of itemsets in the transactional database, and select the minimum support and confidence.</p>
+<p><strong>Step-2:</strong> Take all supports in the transaction with higher support value than the minimum or selected support value.</p>
+<p><strong>Step-3:</strong> Find all the rules of these subsets that have higher confidence value than the threshold or minimum confidence.</p>
+<p><strong>Step-4:</strong> Sort the rules as the decreasing order of lift.</p>
 
-Step-2: Take all supports in the transaction with higher support value than the minimum or selected support value.
-
-Step-3: Find all the rules of these subsets that have higher confidence value than the threshold or minimum confidence.
-
-Step-4: Sort the rules as the decreasing order of lift.
-
-Apriori Algorithm Working
+<h2>Apriori Algorithm Working</h2>
 We will understand the apriori algorithm using an example and mathematical calculation:
+<h2>Example:</h2> Suppose we have the following dataset that has various transactions, and from this dataset, we need to find the frequent itemsets and generate the association rules using the Apriori algorithm:
 
-Example: Suppose we have the following dataset that has various transactions, and from this dataset, we need to find the frequent itemsets and generate the association rules using the Apriori algorithm:
-
-
-Apriori Algorithm in Machine Learning
-Solution:
-Step-1: Calculating C1 and L1:
-In the first step, we will create a table that contains support count (The frequency of each itemset individually in the dataset) of each itemset in the given dataset. This table is called the Candidate set or C1.
-Apriori Algorithm in Machine Learning
-Now, we will take out all the itemsets that have the greater support count that the Minimum Support (2). It will give us the table for the frequent itemset L1.
-Since all the itemsets have greater or equal support count than the minimum support, except the E, so E itemset will be removed.
-Apriori Algorithm in Machine Learning
-Step-2: Candidate Generation C2, and L2:
-In this step, we will generate C2 with the help of L1. In C2, we will create the pair of the itemsets of L1 in the form of subsets.
-After creating the subsets, we will again find the support count from the main transaction table of datasets, i.e., how many times these pairs have occurred together in the given dataset. So, we will get the below table for C2:
-Apriori Algorithm in Machine Learning
-Again, we need to compare the C2 Support count with the minimum support count, and after comparing, the itemset with less support count will be eliminated from the table C2. It will give us the below table for L2
-Apriori Algorithm in Machine Learning
-Step-3: Candidate generation C3, and L3:
-For C3, we will repeat the same two processes, but now we will form the C3 table with subsets of three itemsets together, and will calculate the support count from the dataset. It will give the below table:
-Apriori Algorithm in Machine Learning
-Now we will create the L3 table. As we can see from the above C3 table, there is only one combination of itemset that has support count equal to the minimum support count. So, the L3 will have only one combination, i.e., {A, B, C}.
-Step-4: Finding the association rules for the subsets:
-To generate the association rules, first, we will create a new table with the possible rules from the occurred combination {A, B.C}. For all the rules, we will calculate the Confidence using formula sup( A ^B)/A. After calculating the confidence value for all rules, we will exclude the rules that have less confidence than the minimum threshold(50%).
+<h2>Solution:</h2>
+<ul class="points">
+<li>In the first step, we will create a table that contains support count (The frequency of each itemset individually in the dataset) of each itemset in the given dataset. This table is called the <strong>Candidate set or C1.</strong><br>
+<img src="https://static.javatpoint.com/tutorial/machine-learning/images/apriori-algorithm2.png" alt="Apriori Algorithm in Machine Learning" /></li>
+<li>Now, we will take out all the itemsets that have the greater support count that the Minimum Support (2). It will give us the table for the <strong>frequent itemset L1.</strong><br>
+Since all the itemsets have greater or equal support count than the minimum support, except the E, so E itemset will be removed.<br>
+<img src="https://static.javatpoint.com/tutorial/machine-learning/images/apriori-algorithm3.png" alt="Apriori Algorithm in Machine Learning" /></li>
+</ul>
+<h3 class="h3">Step-2: Candidate Generation C2, and L2:</h3>
+<ul class="points">
+<li>In this step, we will generate C2 with the help of L1. In C2, we will create the pair of the itemsets of L1 in the form of subsets.</li>
+<li>After creating the subsets, we will again find the support count from the main transaction table of datasets, i.e., how many times these pairs have occurred together in the given dataset. So, we will get the below table for C2:<br>
+<img src="https://static.javatpoint.com/tutorial/machine-learning/images/apriori-algorithm4.png" alt="Apriori Algorithm in Machine Learning" /></li>
+<li>Again, we need to compare the C2 Support count with the minimum support count, and after comparing, the itemset with less support count will be eliminated from the table C2. It will give us the below table for L2<br>
+<img src="https://static.javatpoint.com/tutorial/machine-learning/images/apriori-algorithm5.png" alt="Apriori Algorithm in Machine Learning" /></li>
+</ul>
+<h3 class="h3">Step-3: Candidate generation C3, and L3:</h3>
+<ul class="points">
+<li>For C3, we will repeat the same two processes, but now we will form the C3 table with subsets of three itemsets together, and will calculate the support count from the dataset. It will give the below table:<br>
+<img src="https://static.javatpoint.com/tutorial/machine-learning/images/apriori-algorithm6.png" alt="Apriori Algorithm in Machine Learning" /></li>
+<li>Now we will create the L3 table. As we can see from the above C3 table, there is only one combination of itemset that has support count equal to the minimum support count. So, the L3 will have only one combination, i.e., <strong>{A, B, C}.</strong></li>
+</ul>
+<h3 class="h3">Step-4: Finding the association rules for the subsets:</h3>
+<p>To generate the association rules, first, we will create a new table with the possible rules from the occurred combination {A, B.C}. For all the rules, we will calculate the Confidence using formula <strong>sup( A ^B)/A.</strong> After calculating the confidence value for all rules, we will exclude the rules that have less confidence than the minimum threshold(50%).</p>
 
 Consider the below table:
 <table class="alt">
@@ -161,7 +161,7 @@ As the given threshold or minimum confidence is 50%, so the first three rules A 
 <li>This is easy to understand algorithm</li>
 <li>The join and prune steps of the algorithm can be easily implemented on large datasets.</li>
 </ul>
-<h2></h2>Disadvantages of Apriori Algorithm<h2>
+<h2>Disadvantages of Apriori Algorithm</h2>
 <ul>
 <li>The apriori algorithm works slow compared to other algorithms.</li>
 <li>The overall performance can be reduced as it scans the database for multiple times.</li>
