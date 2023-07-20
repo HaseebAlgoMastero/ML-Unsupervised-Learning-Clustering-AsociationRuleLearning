@@ -167,3 +167,4 @@ As the given threshold or minimum confidence is 50%, so the first three rules A 
 <li>The overall performance can be reduced as it scans the database for multiple times.</li>
 <li>The time complexity and space complexity of the apriori algorithm is O(2D), which is very high. Here D represents the horizontal width present in the database.</li>
 </ul>
+<h2>For code Implimentation Check the repository ,Best Of Luck...!</h2>
